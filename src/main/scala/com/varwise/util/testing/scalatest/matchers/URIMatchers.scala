@@ -19,8 +19,7 @@ trait URIMatchers {
       MatchResult(
         compareURI(expected, left),
         s"URI $left did not match expected $expected",
-        s"URI $left did match expected $expected"
-      )
+        s"URI $left did match expected $expected")
     }
   }
 

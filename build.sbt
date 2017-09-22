@@ -4,20 +4,20 @@ import com.typesafe.sbt.SbtScalariform.ScalariformKeys
 
 name := "scala-util"
 
-organization := "com.lonelyplanet"
+organization := "com.varwise"
 
 version := "0.2.2"
 
-scalaVersion := "2.11.8"
+scalaVersion := "2.12.3"
 
 resolvers += "Sonatype release repository" at "https://oss.sonatype.org/content/repositories/releases/"
 
 scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8")
 
 libraryDependencies ++= {
-  val scalaTestVersion      = "3.0.0"
+  val scalaTestVersion      = "3.0.4"
   val logbackClassicVersion = "1.1.6"
-  val akkaHttpVersion       = "10.0.0"
+  val akkaHttpVersion       = "10.0.10"
 
   Seq(
     "io.airbrake"          % "airbrake-java"                         % "2.2.8",
@@ -37,7 +37,7 @@ ScalariformKeys.preferences := ScalariformKeys.preferences.value
   .setPreference(SpacesAroundMultiImports, false)
   .setPreference(CompactControlReadability, false)
 
-bintrayOrganization := Some("lonelyplanet")
+bintrayOrganization := Some("varwise")
 
 licenses += ("MIT", url("http://opensource.org/licenses/MIT"))
 
@@ -52,20 +52,20 @@ val publishSettings =
     )
   else
     Seq(
-      organization := "com.lonelyplanet",
+      organization := "com.varwise",
       pomExtra := <scm>
-        <url>https://github.com/lonelyplanet/scala-util</url>
-        <connection>https://github.com/lonelyplanet/scala-util</connection>
+        <url>https://github.com/varwise/scala-util</url>
+        <connection>https://github.com/varwise/scala-util</connection>
       </scm>
         <developers>
           <developer>
             <id>wlk</id>
             <name>Wojciech Langiewicz</name>
-            <url>https://github.com/lonelyplanet/scala-util</url>
+            <url>https://github.com/varwise/scala-util</url>
           </developer>
         </developers>,
       publishArtifact in Test := false,
-      homepage := Some(url("https://github.com/lonelyplanet/scala-util")),
+      homepage := Some(url("https://github.com/varwise/scala-util")),
       publishMavenStyle := false,
-      resolvers += Resolver.url("lonelyplanet ivy resolver", url("http://dl.bintray.com/lonelyplanet/maven"))(Resolver.ivyStylePatterns)
+      resolvers += Resolver.url("varwise ivy resolver", url("http://dl.bintray.com/varwise/maven"))(Resolver.ivyStylePatterns)
     )
