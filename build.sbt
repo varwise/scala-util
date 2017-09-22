@@ -1,12 +1,11 @@
 import scalariform.formatter.preferences._
-import com.typesafe.sbt.SbtScalariform
 import com.typesafe.sbt.SbtScalariform.ScalariformKeys
 
 name := "scala-util"
 
 organization := "com.varwise"
 
-version := "0.2.2"
+version := "0.2.3"
 
 scalaVersion := "2.12.3"
 
@@ -16,7 +15,7 @@ scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8")
 
 libraryDependencies ++= {
   val scalaTestVersion      = "3.0.4"
-  val logbackClassicVersion = "1.1.6"
+  val logbackClassicVersion = "1.2.3"
   val akkaHttpVersion       = "10.0.10"
 
   Seq(
@@ -29,43 +28,17 @@ libraryDependencies ++= {
 
 fork := true
 
-SbtScalariform.scalariformSettings
+scalariformSettings(autoformat = true)
 
 ScalariformKeys.preferences := ScalariformKeys.preferences.value
   .setPreference(AlignSingleLineCaseStatements, true)
-  .setPreference(DoubleIndentClassDeclaration, true)
+  .setPreference(DoubleIndentConstructorArguments, true)
   .setPreference(SpacesAroundMultiImports, false)
   .setPreference(CompactControlReadability, false)
 
-bintrayOrganization := Some("varwise")
-
-licenses += ("MIT", url("http://opensource.org/licenses/MIT"))
-
-val doNotPublishSettings = Seq(publish := {})
-
-val publishSettings =
-  if (version.toString.endsWith("-SNAPSHOT"))
-    Seq(
-      publishTo := Some("Artifactory Realm" at "http://oss.jfrog.org/artifactory/oss-snapshot-local"),
-      bintrayReleaseOnPublish := false,
-      credentials := List(Path.userHome / ".bintray" / ".artifactory").filter(_.exists).map(Credentials(_))
-    )
+publishTo := Some(
+  if (isSnapshot.value)
+    Opts.resolver.sonatypeSnapshots
   else
-    Seq(
-      organization := "com.varwise",
-      pomExtra := <scm>
-        <url>https://github.com/varwise/scala-util</url>
-        <connection>https://github.com/varwise/scala-util</connection>
-      </scm>
-        <developers>
-          <developer>
-            <id>wlk</id>
-            <name>Wojciech Langiewicz</name>
-            <url>https://github.com/varwise/scala-util</url>
-          </developer>
-        </developers>,
-      publishArtifact in Test := false,
-      homepage := Some(url("https://github.com/varwise/scala-util")),
-      publishMavenStyle := false,
-      resolvers += Resolver.url("varwise ivy resolver", url("http://dl.bintray.com/varwise/maven"))(Resolver.ivyStylePatterns)
-    )
+    Opts.resolver.sonatypeStaging
+)
