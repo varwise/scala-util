@@ -1,7 +1,7 @@
-package com.lonelyplanet.util
+package com.varwise.util
 
 import airbrake.{AirbrakeNoticeBuilder, AirbrakeNotifier}
-import com.lonelyplanet.util.logging.Loggable
+import com.varwise.util.logging.Loggable
 
 class AirbrakeService(key: String, environment: String) extends Loggable {
   private val notifier: AirbrakeNotifier = new AirbrakeNotifier()

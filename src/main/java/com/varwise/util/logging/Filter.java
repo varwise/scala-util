@@ -1,4 +1,4 @@
-package com.lonelyplanet.util.logging;
+package com.varwise.util.logging;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.spi.LoggingEvent;

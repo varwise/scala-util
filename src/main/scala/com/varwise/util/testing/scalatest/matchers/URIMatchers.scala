@@ -1,4 +1,4 @@
-package com.lonelyplanet.util.testing.scalatest.matchers
+package com.varwise.util.testing.scalatest.matchers
 
 import akka.http.scaladsl.model.Uri
 import org.scalatest.matchers.{MatchResult, Matcher}

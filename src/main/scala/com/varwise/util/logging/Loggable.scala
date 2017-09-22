@@ -1,4 +1,4 @@
-package com.lonelyplanet.util.logging
+package com.varwise.util.logging
 
 import org.slf4j.LoggerFactory
 

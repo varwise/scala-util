@@ -1,4 +1,4 @@
-package com.lonelyplanet.util
+package com.varwise.util
 
 import org.scalatest.{FlatSpec, Matchers}
 import OptionConversions._

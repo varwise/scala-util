@@ -1,4 +1,4 @@
-package com.lonelyplanet.util.testing.scalatest.matchers
+package com.varwise.util.testing.scalatest.matchers
 
 import org.scalatest.{FlatSpec, Matchers}
 

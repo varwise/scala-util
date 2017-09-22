@@ -1,20 +1,20 @@
 # scala-util
 
-[![Join the chat at https://gitter.im/lonelyplanet/scala-util](https://badges.gitter.im/lonelyplanet/scala-util.svg)](https://gitter.im/lonelyplanet/scala-util?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Build Status](https://travis-ci.org/lonelyplanet/scala-util.svg?branch=master)](https://travis-ci.org/lonelyplanet/scala-util)
-[![codecov](https://codecov.io/gh/lonelyplanet/scala-util/branch/master/graph/badge.svg)](https://codecov.io/gh/lonelyplanet/scala-util)
-[![Download](https://api.bintray.com/packages/lonelyplanet/maven/scala-util/images/download.svg) ](https://bintray.com/lonelyplanet/maven/scala-util/_latestVersion)
+[![Join the chat at https://gitter.im/varwise/scala-util](https://badges.gitter.im/varwise/scala-util.svg)](https://gitter.im/varwise/scala-util?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://travis-ci.org/varwise/scala-util.svg?branch=master)](https://travis-ci.org/varwise/scala-util)
+[![codecov](https://codecov.io/gh/varwise/scala-util/branch/master/graph/badge.svg)](https://codecov.io/gh/varwise/scala-util)
+[![Download](https://api.bintray.com/packages/varwise/maven/scala-util/images/download.svg) ](https://bintray.com/varwise/maven/scala-util/_latestVersion)
 
 A collections of random Scala utilities
 
 
-    "com.lonelyplanet" %% "scala-util" % "0.2.2"
+    "com.varwise" %% "scala-util" % "0.2.2"
 
 You might need to also add our repository:
 
 ```
 resolvers ++= Seq(
-  Resolver.bintrayRepo("lonelyplanet", "maven")
+  Resolver.bintrayRepo("varwise", "maven")
 )
 ```
 
